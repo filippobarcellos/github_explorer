@@ -1,10 +1,10 @@
 import React, { useState, FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { FiChevronRight } from 'react-icons/fi'
 import Loader from 'react-loader-spinner';
 import api from '../../services/api';
 
-import logo from '../../assets/logo.svg';
-
+import Header from '../../components/Header';
 import { Title, Form, UserList, Error } from './styles';
 
 interface User {
@@ -43,7 +43,7 @@ const Dashboard: React.FC  = () => {
 
   return (
     <>
-      <img src={logo} alt="Github Explorer"/>
+      <Header />
       <Title>Explore github's repositories</Title>
 
       <Form onSubmit={handleAddRepository} error={!!isError}>
@@ -55,13 +55,13 @@ const Dashboard: React.FC  = () => {
 
       <UserList>
         {user.map(user => (
-          <a href="test" key={user.id}>
+          <Link to={user.login} key={user.id}>
             <img src={user.avatar_url} alt={user.login} />
             <div>
               <strong>{user.login}</strong>
             </div>
             <FiChevronRight size={20} />
-          </a>
+          </Link>
         ))}
       </UserList>
     </>

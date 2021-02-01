@@ -24,6 +24,7 @@ export const Form = styled.form<FormProps>`
     padding: 0 24px;
     border-radius: 5px 0 0 5px;
     border: 1px solid ${props => props.error ? '#c53030' : ' #fff'};
+    border-right: 0;
     color: #3a3a3a;
 
     &::placeholder {
