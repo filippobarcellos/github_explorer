@@ -11,7 +11,7 @@ interface UserParams {
   user: string;
 }
 
-interface User {
+interface UserProps {
   id: number,
   avatar_url: string,
   login: string,
@@ -28,7 +28,7 @@ interface Repository {
 }
 
 const User: React.FC  = () => {
-  const [userInfo, setUserInfo] = useState<User | null>();
+  const [userInfo, setUserInfo] = useState<UserProps | null>();
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -46,7 +46,7 @@ const User: React.FC  = () => {
   return (
     <>
       <Header>
-        <Link to="/">
+        <Link to="/github_explorer">
           <FiChevronLeft size={16} />
           Go Back
         </Link>
