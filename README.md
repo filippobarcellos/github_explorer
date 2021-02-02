@@ -2,7 +2,7 @@
 
 ## React app to explore github's users built with React and Github api.
 
-[See it live](https://github-finder-react-context-api.netlify.com/)
+[See it live](https://gallant-goldwasser-960b5d.netlify.app/)
 
 ![home](./github_explorer.gif)
 
