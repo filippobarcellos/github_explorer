@@ -57,7 +57,7 @@ const User: React.FC  = () => {
           <header>
             <img src={userInfo.avatar_url} alt={userInfo.login} />
             <div>
-              <strong>Filippo Barcellos</strong>
+              <strong>{userInfo.login}</strong>
               <span>{userInfo.bio}</span>
             </div>
           </header>
