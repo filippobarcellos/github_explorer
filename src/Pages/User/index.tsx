@@ -46,7 +46,7 @@ const User: React.FC  = () => {
   return (
     <>
       <Header>
-        <Link to="/github_explorer">
+        <Link to="/">
           <FiChevronLeft size={16} />
           Go Back
         </Link>
