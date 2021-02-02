@@ -12,7 +12,7 @@ interface IProps {
 }
 
 const Pagination = ({ totalItems, currentPage, onPageChange, itemsPerPage }: IProps) => {
-  const [maxNumberPagesShowing, setMaxNumberPagesShowing] = useState(5);
+  const [maxNumberPagesShowing] = useState(5);
   const [maxNumberLimit, setMaxNumberLimit] = useState(5);
   const [minNumberLimit, setMinNumberLimit] = useState(1);
 
