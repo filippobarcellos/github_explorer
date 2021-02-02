@@ -30,17 +30,17 @@ interface Repository {
 const User: React.FC  = () => {
   const [userInfo, setUserInfo] = useState<User | null>();
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  const [activePage, setActivePage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const { user } = useParams<UserParams>();
 
   useEffect(() => {
     api.get(`users/${user}`).then(response => setUserInfo(response.data));
-    api.get(`users/${user}/repos?page=${activePage}&per_page=10`).then(response => setRepositories(response.data));
-  }, [user, activePage])
+    api.get(`users/${user}/repos?page=${currentPage}&per_page=10`).then(response => setRepositories(response.data));
+  }, [user, currentPage])
 
   const onPageChange = useCallback((page) => {
-    setActivePage(page);
+    setCurrentPage(page);
   }, []);
 
   return (
@@ -95,7 +95,7 @@ const User: React.FC  = () => {
       {userInfo && repositories && (
         <Pagination 
           totalItems={userInfo.public_repos} 
-          activePage={activePage} 
+          currentPage={currentPage} 
           onPageChange={onPageChange}
           itemsPerPage={10} 
         /> 

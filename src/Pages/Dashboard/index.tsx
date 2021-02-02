@@ -5,6 +5,7 @@ import Loader from 'react-loader-spinner';
 import api from '../../services/api';
 
 import Header from '../../components/Header';
+
 import { Title, Form, UserList, Error } from './styles';
 
 interface User {
@@ -41,13 +42,14 @@ const Dashboard: React.FC  = () => {
     }
   }
 
+
   return (
     <>
       <Header />
-      <Title>Explore github's repositories</Title>
+      <Title>Explore github's users</Title>
 
       <Form onSubmit={handleAddRepository} error={!!isError}>
-        <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="search" placeholder="Type repository name" />
+        <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="search" placeholder="Type a github username" />
         <button type="submit">{isLoading ? <Loader type="ThreeDots" color="#fff" height={40} width={40}/> : 'Search'}</button>
       </Form>
 
